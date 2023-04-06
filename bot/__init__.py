@@ -15,10 +15,9 @@ from faulthandler import enable as faulthandler_enable
 from socket import setdefaulttimeout
 from logging import getLogger, FileHandler, StreamHandler, INFO, basicConfig, error as log_error, info as log_info, warning as log_warning
 from uvloop import install
-install()
 
 faulthandler_enable()
-
+install()
 setdefaulttimeout(600)
 
 botStartTime = time()
@@ -446,7 +445,6 @@ aria2c_global = ['bt-max-open-files', 'download-result', 'keep-unfinished-downlo
 
 if not aria2_options:
     aria2_options = aria2.client.get_global_option()
-    del aria2_options['dir']
 else:
     a2c_glo = {op: aria2_options[op]
                for op in aria2c_global if op in aria2_options}

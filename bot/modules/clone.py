@@ -104,7 +104,7 @@ async def cloneNode(client, message):
                     await delete_all_messages()
                 else:
                     await update_all_messages()
-            except IndexError:
+            except:
                 pass
         cc = f'\n\n<b>cc: </b>{tag}'
         if button in ["cancelled", ""]:
